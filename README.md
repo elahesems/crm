@@ -1,0 +1,2 @@
+# crm
+for learning django
