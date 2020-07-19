@@ -2,9 +2,7 @@
 
 <form method="POST" action="">
     {% csrf_token %}
-    {{ form.as_p }}
-
-
+    {{ form.username }}
     <input type="submit" name="Create User">
 
 
