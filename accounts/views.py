@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
-from django.contrib.auth.forms import UserCreationForm
+
 # Create your views here.
 from .models import *
-from .forms import OrderForm, CreateUserForm
+from .forms import OrderForm, CreateUserForm, EnterName
 from .filters import OrderFilter
 
 def registerPage(request):
@@ -95,3 +95,41 @@ def deleteOrder(request, pk):
 
 	context = {'item':order}
 	return render(request, 'accounts/delete.html', context)
+
+
+# def testing(request):
+# 	adlari = Names.objects.all()
+# 	if request.method =="POST":
+# 		name = request.POST.get('bb')
+# 		if len(name)<= 10:
+# 			writedName=Names(name=name)
+# 			writedName.save()
+# 			return redirect('testing')
+# 		else:
+# 			return HttpResponse('name is too long')
+# 	context = {'adlari':adlari}
+# 	return render(request,'accounts/test.html',context)
+
+# def testing(request):
+# 	adlari = Names.objects.all()
+# 	form = EnterName()
+# 	if request.method == "POST":
+# 		form = EnterName(request.POST)
+
+		# try:
+		# 	if form.is_valid():
+		# 		form.save()
+		# 	else:
+		# 		return HttpResponse('form is not valid')
+		# except:
+		# 	return HttpResponse('form is not valid 2')
+
+
+	# context = {'adlari': adlari,'form':form}
+	# return render(request, 'accounts/test.html', context)
+
+# def sil(request,pk):
+
+	# name = Names.objects.get(id=pk)
+	# name.delete()
+	# return redirect('testing')

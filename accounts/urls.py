@@ -14,5 +14,8 @@ urlpatterns = [
     path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
     path('delete_order/<str:pk>/', views.deleteOrder, name="delete_order"),
 
+    # path('test/', views.testing, name="testing"),
+    # path('silmek/<str:pk>/',views.sil, name='silmek')
+
 
 ]
