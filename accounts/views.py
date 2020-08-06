@@ -139,6 +139,8 @@ def customer(request, pk_test):
     return render(request, 'accounts/customer.html', context)
 
 
+
+
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def deleteCustomer(request, pk):

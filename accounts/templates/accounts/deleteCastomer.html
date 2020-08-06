@@ -10,7 +10,7 @@
 
 			<p>Are you sure you want to delete Customer "{{cst}}"?</p>
 
-			<form action="{% url 'delete_order' cst.id  %}" method="POST">
+			<form action="{% url 'delete_customer' cst.id  %}" method="POST">
 
 				{% csrf_token %}
 				<a class="btn btn-outline-danger" href="{% url 'home' %}">Cancel</a>
