@@ -141,6 +141,28 @@ def customer(request, pk_test):
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
+def deleteCustomer(request, pk):
+    customer = Customer.objects.get(id=pk)
+    if request.method == "POST":
+        customer.delete()
+        return redirect('/')
+
+    context = {'cst': customer}
+    return render(request, 'accounts/deleteCastomer.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
 def createOrder(request, pk):
     OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=10)
     customer = Customer.objects.get(id=pk)
@@ -185,3 +207,5 @@ def deleteOrder(request, pk):
 
     context = {'item': order}
     return render(request, 'accounts/delete.html', context)
+
+

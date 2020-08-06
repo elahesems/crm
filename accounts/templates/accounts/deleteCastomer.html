@@ -8,9 +8,9 @@
 		<div class="card card-body">
 
 
-			<p>Are you sure you want to delete "{{item}}"?</p>
+			<p>Are you sure you want to delete Customer "{{cst}}"?</p>
 
-			<form action="{% url 'delete_order' item.id  %}" method="POST">
+			<form action="{% url 'delete_order' cst.id  %}" method="POST">
 
 				{% csrf_token %}
 				<a class="btn btn-outline-danger" href="{% url 'home' %}">Cancel</a>
